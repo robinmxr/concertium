@@ -15,9 +15,9 @@
                         <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
                         <div class="details">
                             <h3><a href="#">{{ $art->name }}</a></h3>
-                            <p>Quas alias incidunt</p>
+                            <p>{{ $art->bandname }}</p>
                             <div class="social">
-                            <button class="btn btn-success">Book This Artist</button>
+                            <a href="{{ route('organizer.artist.view',$art->id) }}" class="btn buy-tickets">View Profile</a>
                             </div>
                         </div>
                     </div>

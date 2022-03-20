@@ -14,4 +14,9 @@ class ArtistController extends Controller
         $artist = Artist::get();
         return view('organizer.showartist',compact('artist'));
     }
+    public function viewArtist($id)
+    {
+        $artist = Artist::find($id);
+        return view('organizer.artistprofile',compact('artist'));
+    }
 }

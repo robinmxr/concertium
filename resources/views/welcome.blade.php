@@ -41,7 +41,7 @@
 
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Gallery</h2>
+          <h2>Venue</h2>
           <p>Check our gallery from the recent events</p>
         </div>
       </div>
@@ -83,11 +83,11 @@
 
                 <hr>
                 <div class="text-center">
-                    <a href="{{ route('user.login') }}"> <button type="button" class="btn btn-outline-dark" >Login</button></a>
+                    <a href="{{ route('user.login') }}"> <button type="button" class="btn buy-tickets px-6" >Login</button></a>
                 </div>
-                  <hr>
+                  <br>
                   <div class="text-center">
-                      <a href="{{ route('user.register') }}"><button type="button" class="btn btn-outline-dark" >Register</button> </a>
+                      <a href="{{ route('user.register') }}"><button type="button" class="btn buy-tickets px-6" >Register</button> </a>
                 </div>
               </div>
             </div>
@@ -100,11 +100,11 @@
 
                 <hr>
                 <div class="text-center">
-                    <a href="{{ route('organizer.login') }}">    <button type="button" class="btn btn-outline-dark">Login</button> </a>
+                    <a href="{{ route('organizer.login') }}">    <button type="button" class="btn buy-tickets px-6">Login</button> </a>
                 </div>
-                  <hr>
+                  <br>
                   <div class="text-center">
-                      <a href="{{ route('organizer.register') }}"> <button type="button" class="btn btn-outline-dark" >Register</button> </a>
+                      <a href="{{ route('organizer.register') }}"> <button type="button" class="btn buy-tickets px-6" >Register</button> </a>
                 </div>
               </div>
             </div>
@@ -118,12 +118,12 @@
                 <hr>
 
                 <div class="text-center">
-                    <a href="{{ route('artist.login') }}">  <button type="button" class="btn btn-outline-dark" >Login</button></a>
+                    <a href="{{ route('artist.login') }}">  <button type="button" class="btn buy-tickets px-6" >Login</button></a>
                 </div>
-                  <hr>
+                  <br>
                   <div class="text-center">
                       <a href="{{ route('artist.register') }}">
-                          <button type="button" class="btn btn-outline-dark" >Register</button> </a>
+                          <button type="button" class="btn buy-tickets px-6" >Register</button> </a>
                 </div>
 
               </div>
@@ -169,7 +169,7 @@
     </section><!-- End Buy Ticket Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="section-bg">
+    <section id="contact" class="section-bg m-auto">
 
       <div class="container" data-aos="fade-up">
 

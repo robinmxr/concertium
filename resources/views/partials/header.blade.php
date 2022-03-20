@@ -43,22 +43,23 @@
         <div id="logo" class="me-auto">
             <!-- Uncomment below if you prefer to use a text logo -->
             <!-- <h1><a href="index.html">The<span>Event</span></a></h1>-->
-            <a href="#" class="scrollto"><img src="{{ asset('img/concertium.svg') }}" alt="" title="">
+            <a href="{{ route('home') }}" class="scrollto"><img src="{{ asset('img/concertium.png') }}" class="logo" alt="" title="">
             </a>
         </div>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
 
-                <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-
-
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <!-- .navbar -->
 
         @if(Auth::guard('admin')->check())
+                    <li><a class="nav-link scrollto " href="{{ route('home') }}">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+                    <li><a class="nav-link scrollto" href="{{ route('admin.profile.view') }}">My Profile</a></li>
+
+
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('admin')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -84,6 +85,13 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
             @elseif(Auth::guard('user')->check())
+            <li><a class="nav-link scrollto " href="{{ route('home') }}">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+            <li><a class="nav-link scrollto" href="{{ route('user.profile.view') }}">My Profile</a></li>
+
+
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('user')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -109,6 +117,13 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         @elseif(Auth::guard('artist')->check())
+            <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+            <li><a class="nav-link scrollto" href="{{ route('artist.profile.view') }}">My Profile</a></li>
+
+
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('artist')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -134,6 +149,14 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         @elseif(Auth::guard('organizer')->check())
+            <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('organizer.artist.show') }}">All Artists</a></li>
+            <li><a class="nav-link scrollto" href="#about">Venues</a></li>
+
+            <li><a class="nav-link scrollto" href="{{ route('organizer.profile.view') }}">My Profile</a></li>
+
+
+            <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('organizer')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -159,6 +182,13 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         @else
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+            <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+
+
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

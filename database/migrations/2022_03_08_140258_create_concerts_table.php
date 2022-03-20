@@ -15,6 +15,12 @@ class CreateConcertsTable extends Migration
     {
         Schema::create('concerts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('songcount');
+            $table->string('status')->default('pending');
+            $table->unsignedBigInteger('artist_id');
+            $table->unsignedBigInteger('organizer_id');
+            $table->unsignedBigInteger('venue_id')->default('1');
             $table->timestamps();
         });
     }

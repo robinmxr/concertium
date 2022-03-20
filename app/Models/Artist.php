@@ -27,8 +27,11 @@ class Artist extends Authenticatable
         'name',
         'email',
         'password',
-    ];
-
+        'bandname',
+        'genre',
+        'cost',
+        'balance',
+        ];
     /**
      * The attributes that should be hidden for serialization.
      *

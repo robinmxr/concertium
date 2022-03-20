@@ -96,11 +96,11 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   display: block;
-  width: 60px;
+  width: 100px;
   height: 5px;
   background: #f82249;
   bottom: 0;
-  left: calc(50% - 25px);
+  left: calc(50% - 55px);
 }
 .section-header h2 {
   font-size: 36px;
@@ -168,23 +168,23 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 .buy-tickets {
   color: #fff;
-  background: #f82249;
+  background: maroon;
   padding: 7px 22px;
   margin: 0 0 0 15px;
   border-radius: 50px;
-  border: 2px solid #f82249;
+  border: 2px solid maroon;
   transition: all ease-in-out 0.3s;
   font-weight: 500;
-  line-height: 1;
+  line-height: 30px;
   font-size: 13px;
   white-space: nowrap;
 }
 .buy-tickets:hover {
-  background: none;
-  color: #fff;
+  background: whitesmoke;
+  color: maroon;
 }
 .buy-tickets:focus {
-  color: #fff;
+  color: gray;
 }
 @media (max-width: 992px) {
   .buy-tickets {
@@ -196,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -306,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -1418,3 +1418,138 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   color: #ddd;
 }
+.datepicker {
+    border-radius: 0;
+    padding: 0;
+}
+.datepicker-days table thead, .datepicker-days table tbody, .datepicker-days table tfoot {
+    padding: 10px;
+    display: list-item;
+}
+.datepicker-days table thead, .datepicker-months table thead, .datepicker-years table thead, .datepicker-decades table thead, .datepicker-centuries table thead {
+    background: #3546b3;
+    color: #ffffff;
+    border-radius: 0;
+}
+.datepicker-days table thead tr:nth-child(2n+0) td, .datepicker-days table thead tr:nth-child(2n+0) th {
+    border-radius: 3px;
+}
+.datepicker-days table thead tr:nth-child(3n+0) {
+    text-transform: uppercase;
+    font-weight: 300 !important;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+    padding: 11px 13px;
+}
+.datepicker-months table thead td, .datepicker-months table thead th, .datepicker-years table thead td, .datepicker-years table thead th, .datepicker-decades table thead td, .datepicker-decades table thead th, .datepicker-centuries table thead td, .datepicker-centuries table thead th {
+    border-radius: 0;
+}
+.datepicker td, .datepicker th {
+    border-radius: 50%;
+    padding: 0 12px;
+}
+.datepicker-days table thead, .datepicker-months table thead, .datepicker-years table thead, .datepicker-decades table thead, .datepicker-centuries table thead {
+    background: #3546b3;
+    color: #ffffff;
+    border-radius: 0;
+}
+.datepicker table tr td.active, .datepicker table tr td.active:hover, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover {
+    background-image: none;
+}
+.datepicker .prev, .datepicker .next {
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+    width: 37px;
+    height: 37px;
+}
+.datepicker .prev:hover, .datepicker .next:hover {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.99);
+    font-size: 21px;
+}
+.datepicker .datepicker-switch {
+    font-size: 24px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+.datepicker .datepicker-switch:hover {
+    color: rgba(255, 255, 255, 0.7);
+    background: transparent;
+}
+.datepicker table tr td span {
+    border-radius: 2px;
+    margin: 3%;
+    width: 27%;
+}
+.datepicker table tr td span.active, .datepicker table tr td span.active:hover, .datepicker table tr td span.active.disabled, .datepicker table tr td span.active.disabled:hover {
+    background-color: #3546b3;
+    background-image: none;
+}
+.dropdown-menu {
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.datepicker-dropdown.datepicker-orient-top:before {
+    border-top: 7px solid rgba(0, 0, 0, .1);
+}
+
+.wrapper {
+    max-width: 560px;
+    margin: 100px auto;
+}
+
+label {
+    position: relative;
+    display: block;
+}
+label > input {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    height: 45px;
+    width: 100%;
+    font-size: 16px;
+    margin: 0 0 30px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all .3s;
+}
+label > input:valid + span {
+    transform: translateY(-25px) scale(0.8);
+    transform-origin: 0;
+}
+label > input:valid {
+    border-bottom: 1px solid darkred;
+    box-shadow: 0 1px 0 0 #890F0D;
+}
+label > span {
+    color: #9e9e9e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    cursor: text;
+    transition: .2s ease-out;
+}
+label > input:focus + span {
+    transform: translateY(-25px) scale(0.8);
+    transform-origin: 0;
+    color: #890F0D;
+}
+label > input:focus {
+    border-bottom: 1px solid darkred;
+    box-shadow: 0 1px 0 0 #890F0D;
+}
+
+
+.logo{
+    width : 220px;
+    height : 75px;
+}
+
