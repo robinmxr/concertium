@@ -19,6 +19,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
+        session(['link' => url()->previous()]);
         return view('auth.artist.login');
     }
 
@@ -34,7 +35,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::ARTISTHOME);
+        redirect()->intended()->getTargetUrl();
     }
 
     /**

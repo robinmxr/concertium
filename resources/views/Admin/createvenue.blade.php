@@ -6,7 +6,7 @@
         <section id="speakers-details">
             <div class="container">
                 <div class="section-header">
-                    <h2>Send the Artist a Request</h2>
+                    <h2>Add a New Venue</h2>
 
                 </div>
 
@@ -18,8 +18,8 @@
 
 
                     <div class="col-md-12">
-                        <form method="post" action="{{ route('organizer.concert.makerequest',$artist->id) }}">
-                            @csrf
+<form action="{{ route('admin.venue.store') }}" method="post">
+    @csrf
                         <div class="card">
                             <div class="card-body">
                                @include('partials.message')
@@ -28,7 +28,7 @@
                                 <div class="row mb-3">
 
                                     <label>
-                                        <input type="text" required="required" value="{{ $organizer->name }}"/>
+                                        <input type="text" required="required" name="name"/>
                                         <span>Name</span>
                                     </label>
 
@@ -36,32 +36,16 @@
                                 </div>
                                 <div class="row mb-3">
                                     <label>
-                                        <input type="text" required="required" value="{{ $organizer->email }}"/>
-                                        <span>Email</span>
+                                        <input type="number" required="required" name="capacity"/>
+                                        <span>Capacity</span>
                                     </label>
                                 </div>
                                 <div class="row mb-3">
                                     <label>
-                                        <input type="text" required="required" value="{{ $organizer->phone }}"/>
-                                        <span>Phone</span>
+                                        <input type="text" required="required" name="cost"/>
+                                        <span>Cost</span>
                                     </label>
                                 </div>
-                                <div class="row mb-3">
-                                    <label>
-                                        <input type="text" required="required" name="name"/>
-                                        <span>Concert Name</span>
-                                    </label>
-                                </div>
-                                <div class="row mb-3">
-                                    <label>
-                                        <input type="text" required="required" name="songcount"/>
-                                        <span>Number of Songs</span>
-                                    </label>
-                                </div>
-
-
-
-
 
 
 
@@ -73,7 +57,8 @@
                                 </div>
                                 </div>
                             </div>
-                        </form>
+</form>
+
 
                         </div>
 

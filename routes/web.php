@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/',[PageController::class,'home'])->name('home');
+Route::get('/contact',[PageController::class,'contact'])->name('contact');
+Route::get('/concert',[User\ConcertController::class,'showConcerts'])->name('user.concert.show');
+
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');
@@ -40,6 +41,7 @@ Route::middleware('organizer')->name('organizer.')->group(function () {
  Route::get('/organizer/artist', [Organizer\ArtistController::class,'showArtist'])->name('artist.show');
  Route::get('/organizer/artist/{id}', [Organizer\ArtistController::class,'viewArtist'])->name('artist.view');
  Route::get('/organizer/artist/hire/{id}', [Organizer\ConcertController::class,'showRequest'])->name('concert.showrequest');
+ Route::post('/organizer/artist/hire/{id}', [Organizer\ConcertController::class,'makeRequest'])->name('concert.makerequest');
  Route::get('/organizer/profile', [Organizer\OrganizerController::class,'profile'])->name('profile.view');
  Route::get('/organizer/profile/edit', [Organizer\OrganizerController::class,'editprofile'])->name('profile.edit');
  Route::post('/organizer/profile/edit', [Organizer\OrganizerController::class,'updateprofile'])->name('profile.update');
@@ -51,6 +53,7 @@ Route::middleware('artist')->name('artist.')->group(function () {
     Route::get('/artist/profile', [Artist\ArtistController::class,'profile'])->name('profile.view');
     Route::get('/artist/profile/edit', [Artist\ArtistController::class,'editprofile'])->name('profile.edit');
     Route::post('/artist/profile/edit', [Artist\ArtistController::class,'updateprofile'])->name('profile.update');
+    Route::get('/artist/concerts', [Artist\ConcertController::class,'showConcerts'])->name('concert.list');
 });
 
 
@@ -60,10 +63,13 @@ Route::middleware('user')->name('user.')->group(function () {
     Route::post('/profile/edit', [User\UserController::class,'updateprofile'])->name('profile.update');
 });
 
-Route::middleware('admin')->name('admin')->group(function () {
+Route::middleware('admin')->name('admin.')->group(function () {
     Route::get('/admin/profile', [Admin\AdminController::class,'profile'])->name('profile.view');
     Route::get('/admin/profile/edit', [Admin\AdminController::class,'editprofile'])->name('profile.edit');
     Route::post('/admin/profile/edit', [Admin\AdminController::class,'updateprofile'])->name('profile.update');
+    Route::get('/admin/venue', [Admin\VenueController::class,'showVenue'])->name('venue.show');
+    Route::get('/admin/venue/create', [Admin\VenueController::class,'createVenue'])->name('venue.create');
+    Route::post('/admin/venue/create', [Admin\VenueController::class,'storeVenue'])->name('venue.store');
 });
 
 require __DIR__.'/auth.php';

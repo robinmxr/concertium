@@ -54,12 +54,12 @@
 
         @if(Auth::guard('admin')->check())
                     <li><a class="nav-link scrollto " href="{{ route('home') }}">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('admin.venue.show') }}">Venue</a></li>
 
                     <li><a class="nav-link scrollto" href="{{ route('admin.profile.view') }}">My Profile</a></li>
 
 
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('admin')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -123,7 +123,7 @@
             <li><a class="nav-link scrollto" href="{{ route('artist.profile.view') }}">My Profile</a></li>
 
 
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('artist')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -156,7 +156,7 @@
             <li><a class="nav-link scrollto" href="{{ route('organizer.profile.view') }}">My Profile</a></li>
 
 
-            <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact Us</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('organizer')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
@@ -185,7 +185,7 @@
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
 
-            <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+            <li><a class="nav-link scrollto" href="#">Concerts</a></li>
 
 
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>

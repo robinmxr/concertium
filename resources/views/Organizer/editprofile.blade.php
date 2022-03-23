@@ -23,10 +23,11 @@
                         <form method="post" action="{{ route('organizer.profile.update') }}">
                             @csrf
                         <div class="card">
+                            <div class="card-header">
+                                <h1 class="mt-3">Edit Your Profile</h1>
+                            </div>
                             <div class="card-body">
-                                <div class="alert alert-success alert-block">
-                                    <strong>Edit My Profile</strong>
-                                </div>
+
                                 @if ($message = Session::get('success'))
                                     <div class="alert alert-success alert-block">
                                         <strong>{{ $message }}</strong>

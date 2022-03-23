@@ -171,17 +171,18 @@ h1, h2, h3, h4, h5, h6 {
   background: maroon;
   padding: 7px 22px;
   margin: 0 0 0 15px;
-  border-radius: 50px;
-  border: 2px solid maroon;
+  border-radius: 10px;
+  border: 2px solid #41464b;
   transition: all ease-in-out 0.3s;
   font-weight: 500;
   line-height: 30px;
   font-size: 13px;
   white-space: nowrap;
+    mso-border-shadow: yes;
 }
 .buy-tickets:hover {
-  background: whitesmoke;
-  color: maroon;
+  background: #1a202c;
+  color: #fff;
 }
 .buy-tickets:focus {
   color: gray;
