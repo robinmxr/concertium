@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth\Artist;
 use App\Http\Controllers\Controller;
 use App\Models\Artist;
+use App\Models\Date;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,19 @@ class ArtistController extends Controller
         $artist->genre = $request->genre;
         $artist->cost = $request->cost;
 
+
+
+
         $artist->save();
+
+        if(count($request->date) > 0) {
+            foreach($request->date as $dt) {
+
+                dd($dt);
+
+
+            }
+        }
 
         return back()->with('success','Profile Updated!');
     }

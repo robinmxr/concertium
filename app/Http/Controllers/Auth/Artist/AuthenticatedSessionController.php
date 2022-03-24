@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        redirect()->intended()->getTargetUrl();
+        return redirect()->intended(RouteServiceProvider::ARTISTHOME);
     }
 
     /**

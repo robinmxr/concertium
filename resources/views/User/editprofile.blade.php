@@ -6,7 +6,7 @@
         <section id="speakers-details">
             <div class="container">
                 <div class="section-header">
-                    <h2>Edit My Profile</h2>
+                    <h2>Edit  Profile</h2>
 
                 </div>
 

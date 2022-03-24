@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ConcertController extends Controller
 {
-    public function showConcerts()
+    public function showConcert()
     {
         $concert = Concert::all();
         return view('user.concertlist',compact('concert'));

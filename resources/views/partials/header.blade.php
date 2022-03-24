@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <link href="{{ asset('css/datepicker.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/aos/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -118,7 +119,7 @@
             </nav>
         @elseif(Auth::guard('artist')->check())
             <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('artist.concert.list') }}">Concerts</a></li>
 
             <li><a class="nav-link scrollto" href="{{ route('artist.profile.view') }}">My Profile</a></li>
 

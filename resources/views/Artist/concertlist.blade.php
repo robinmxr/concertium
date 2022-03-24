@@ -23,7 +23,7 @@
                                 <th scope="row">1</th>
                                 <td>{{ $con->name }}</td>
                                 <td>{{ $con->status }}</td>
-                                <td><a class="buy-tickets">Details</a></td>
+                                <td><a class="buy-tickets" href="{{ route('artist.concert.view',$con->id) }}">View Details</a></td>
                             </tr>
 
                             @endforeach

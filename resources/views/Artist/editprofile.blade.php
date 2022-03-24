@@ -6,7 +6,7 @@
         <section id="speakers-details">
             <div class="container">
                 <div class="section-header">
-                    <h2>Edit My Profile</h2>
+                    <h2>Edit Profile</h2>
 
                 </div>
 
@@ -67,11 +67,34 @@
                                         <span>Cost</span>
                                     </label>
                                 </div>
+
+
                                     <div class="row mb-3">
-                                        <label>
-                                            <input type="text" required="required" class="datepicker" name="date" />
-                                            <span>Cost</span>
-                                        </label>
+                                        <div class="col-md-3">
+                                            <label>
+                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <span>Date</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <span>Date</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <span>Date</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>
+                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <span>Date</span>
+                                            </label>
+                                        </div>
+
                                     </div>
 
 
@@ -90,7 +113,7 @@
 
                                 <div class="row">
                                         <div class="col-sm-12" align="center">
-                                        <input type="submit" class="btn buy-tickets px-4" value="Save Changes">
+                                        <input type="submit" class="btn buy-tickets px-4" value="Update">
                                     </div>
                                 </div>
                                 </div>

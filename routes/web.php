@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[PageController::class,'home'])->name('home');
 Route::get('/contact',[PageController::class,'contact'])->name('contact');
-Route::get('/concert',[User\ConcertController::class,'showConcerts'])->name('user.concert.show');
+Route::get('/concert',[User\ConcertController::class,'showConcerts'])->name('user.concert.list');
 
 
 Route::get('/dashboard', function () {
@@ -53,7 +53,8 @@ Route::middleware('artist')->name('artist.')->group(function () {
     Route::get('/artist/profile', [Artist\ArtistController::class,'profile'])->name('profile.view');
     Route::get('/artist/profile/edit', [Artist\ArtistController::class,'editprofile'])->name('profile.edit');
     Route::post('/artist/profile/edit', [Artist\ArtistController::class,'updateprofile'])->name('profile.update');
-    Route::get('/artist/concerts', [Artist\ConcertController::class,'showConcerts'])->name('concert.list');
+    Route::get('/artist/concert', [Artist\ConcertController::class,'showConcert'])->name('concert.list');
+    Route::get('/artist/concert/{id}', [Artist\ConcertController::class,'viewConcert'])->name('concert.view');
 });
 
 

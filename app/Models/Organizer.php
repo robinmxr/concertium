@@ -47,5 +47,10 @@ class Organizer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function concert()
+    {
+        return $this->hasMany('App\Models\Concert');
+    }
 }
 

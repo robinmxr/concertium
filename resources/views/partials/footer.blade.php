@@ -73,11 +73,15 @@
 <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="{{ asset('js/datepicker.js') }}"></script>
 <script>
-    $('.dateselect').datepicker({
-        format: 'dd/mm/yyyy',
-        // startDate: '-3d'h
+    $(function()
+    {
+        $('.dateselect').datepicker({
+            format: 'yyyy/mm/dd',
+            // startDate: '-3d'h
+        })
     });
 </script>
 <!-- Template Main JS File -->
