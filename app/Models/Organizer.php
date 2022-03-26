@@ -27,6 +27,7 @@ class Organizer extends Authenticatable
         'name',
         'email',
         'password',
+        'balance',
     ];
 
     /**

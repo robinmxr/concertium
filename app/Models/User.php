@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'balance',
     ];
 
     /**
@@ -44,4 +45,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ticket()
+    {
+        return $this->hasMany('App\Models\Ticket');
+    }
 }

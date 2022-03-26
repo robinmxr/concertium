@@ -11,8 +11,10 @@ class Concert extends Model
 
     protected $fillable = [
         'name',
-
         'songcount',
+        'tickets',
+        'status',
+        'baseprice',
     ];
 
     public function artist()
@@ -28,5 +30,9 @@ class Concert extends Model
     public function venue()
     {
         return $this->belongsTo('App\Models\Venue','venue_id');
+    }
+    public function ticket()
+    {
+        return $this->hasMany('App\Models\Ticket');
     }
 }

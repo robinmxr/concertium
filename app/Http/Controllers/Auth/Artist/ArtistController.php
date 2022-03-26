@@ -13,21 +13,23 @@ class ArtistController extends Controller
     //
     public function profile()
     {
-        $artist = new Artist;
+
         $id =  Auth::guard('artist')->user()->id;
         $artist = Artist::find($id);
-        return view('artist.profile',compact('artist'));
+        $date = Date::where('artist_id',$id)->get();
+        return view('artist.profile',compact('artist','date'));
     }
     public function editprofile()
     {
-        $artist = new Artist;
+
         $id =  Auth::guard('artist')->user()->id;
         $artist = Artist::find($id);
-        return view('artist.editprofile',compact('artist'));
+        $date = Date::where('artist_id',$id)->get();
+        return view('artist.editprofile',compact('artist','date'));
     }
     public function updateprofile(Request $request)
     {
-        $artist = new Artist;
+
         $id =  Auth::guard('artist')->user()->id;
         $artist = Artist::find($id);
 
@@ -37,19 +39,24 @@ class ArtistController extends Controller
         $artist->genre = $request->genre;
         $artist->cost = $request->cost;
 
+        if($request->check == 'true') {
+            if (count($request->date) > 0) {
+                $olddate = Date::where('artist_id',$id)->delete();
+
+                foreach ($request->date as $dt) {
 
 
+                    $date = new Date;
+                    $date->artist_id = $id;
+                    $date->date = $dt;
+                    $date->save();
+                }
+            }
+        }
 
         $artist->save();
 
-        if(count($request->date) > 0) {
-            foreach($request->date as $dt) {
 
-                dd($dt);
-
-
-            }
-        }
 
         return back()->with('success','Profile Updated!');
     }

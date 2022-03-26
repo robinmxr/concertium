@@ -55,6 +55,8 @@ Route::middleware('artist')->name('artist.')->group(function () {
     Route::post('/artist/profile/edit', [Artist\ArtistController::class,'updateprofile'])->name('profile.update');
     Route::get('/artist/concert', [Artist\ConcertController::class,'showConcert'])->name('concert.list');
     Route::get('/artist/concert/{id}', [Artist\ConcertController::class,'viewConcert'])->name('concert.view');
+    Route::post('/artist/concert/{id}', [Artist\ConcertController::class,'approveConcert'])->name('concert.approve');
+    Route::post('/artist/concert/delete/{id}', [Artist\ConcertController::class,'deleteConcert'])->name('concert.delete');
 });
 
 

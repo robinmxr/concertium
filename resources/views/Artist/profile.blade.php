@@ -83,8 +83,22 @@
                                 </div>
                                 <hr>
                                 <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Date</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <ul class="list-group">
+                                            <li class="list-group-item active">Available Dates</li>
+                                            @foreach($date as $dt)
+                                            <li class="list-group-item">{{ $dt->date }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
                                     <div class="col-sm-12" align="center">
-                                        <a class="buy-tickets" href="{{ route('artist.profile.edit') }}">Edit</a>
+                                        <a class="btn buy-tickets px-4" href="{{ route('artist.profile.edit') }}">Edit</a>
                                     </div>
                                 </div>
                             </div>

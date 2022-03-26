@@ -19,6 +19,7 @@ class CreateOrganizersTable extends Migration
             $table->string('phone')->default('not set');
             $table->decimal('balance','8','2')->default('100000.00');
             $table->string('email')->unique();
+            $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

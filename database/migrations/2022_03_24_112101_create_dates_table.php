@@ -16,7 +16,7 @@ class CreateDatesTable extends Migration
         Schema::create('dates', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('artist_id');
-            $table->date('date');
+            $table->string('date');
             $table->timestamps();
         });
     }

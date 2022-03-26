@@ -17,6 +17,9 @@ class CreateVenuesTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('capacity');
+            $table->text('description');
+            $table->unsignedBigInteger('admin_id');
+            $table->string('image')->nullable();
             $table->decimal('cost','8','2');
             $table->timestamps();
         });

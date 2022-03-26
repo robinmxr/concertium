@@ -58,7 +58,7 @@ class Artist extends Authenticatable
 
     public function date()
     {
-        return $this->hasMany('App\Models\Concert');
+        return $this->hasMany('App\Models\Date');
     }
 }
 

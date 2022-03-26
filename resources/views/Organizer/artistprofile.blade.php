@@ -57,6 +57,20 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
+                                        <h6 class="mb-0">Date</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <ul class="list-group">
+                                            <li class="list-group-item active">Available Dates</li>
+                                            @foreach($artist->date as $dt)
+                                                <li class="list-group-item">{{ $dt->date }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
                                         <h6 class="mb-0">Charged Amount</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">

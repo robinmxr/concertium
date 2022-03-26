@@ -26,6 +26,7 @@ class Admin extends Authenticatable
         'name',
         'email',
         'password',
+        'balance',
     ];
 
     /**
@@ -46,4 +47,8 @@ class Admin extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function venue()
+    {
+        return $this->hasMany('App\Models\Venue');
+    }
 }

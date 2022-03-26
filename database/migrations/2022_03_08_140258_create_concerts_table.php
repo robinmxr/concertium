@@ -17,6 +17,9 @@ class CreateConcertsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('songcount');
+            $table->integer('tickets');
+            $table->string('date');
+            $table->decimal('baseprice','5','2');
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('artist_id');
             $table->unsignedBigInteger('organizer_id');

@@ -21,4 +21,19 @@ class ConcertController extends Controller
         $concert = Concert::find($id);
         return view('artist.viewconcert',compact('concert'));
     }
+
+    public function approveConcert($id)
+    {
+        $concert = Concert::find($id);
+        $concert->status = 'approved';
+        $concert->save();
+        return redirect()->route('artist.concert.list');
+    }
+
+    public function deleteConcert($id)
+    {
+        $concert = Concert::find($id);
+        $concert->delete();
+        return redirect()->route('artist.concert.list');
+    }
 }

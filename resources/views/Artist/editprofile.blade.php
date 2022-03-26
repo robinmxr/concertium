@@ -72,28 +72,35 @@
                                     <div class="row mb-3">
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[0]->date }}" />
                                                 <span>Date</span>
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[1]->date }}"/>
                                                 <span>Date</span>
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[2]->date }}"/>
                                                 <span>Date</span>
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]"/>
+                                                <input type="text" class="dateselect" name="date[]" />
                                                 <span>Date</span>
                                             </label>
                                         </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="check" value="true" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+            Save Date Changes
+        </label>
+    </div>
 
                                     </div>
 

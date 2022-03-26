@@ -20,13 +20,5 @@ class Date extends Model
         return $this->belongsTo('App\Models\Artist','artist_id');
     }
 
-    public function setnewDateFormat($value)
-    {
-        $this->attributes['date'] = Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
-    }
 
-    public function getnewDateFormat($value)
-    {
-        return Carbon::parse($value)->format('m/d/Y');
-    }
 }

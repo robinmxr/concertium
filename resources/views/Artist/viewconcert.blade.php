@@ -58,23 +58,49 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Venue</h6>
+                                        <h6 class="mb-0">Date</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{ $concert->venue->name }}
+                                        {{ $concert->date }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Ticket Price</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        {{ $concert->baseprice }}
                                     </div>
                                 </div>
                                 <hr>
 
-                                <hr>
+
 
                                 <div class="row">
+                                    @if($concert->status == 'approved')
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Status</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary">
+                                            Approved
+                                        </div>
+                                    @else
                                     <div class="col-sm-6" align="center">
-                                        <a class="btn buy-tickets px-4" href="#">Accept</a>
+                                        <form method="post" action="{{ route('artist.concert.approve',$concert->id) }}">
+                                        @csrf
+                                            <button class="btn buy-tickets px-4" type="submit" >Accept</button>
+                                        </form>
                                     </div>
+
+
                                     <div class="col-sm-6" align="center">
-                                        <a class="btn buy-tickets px-4" href="#">Reject</a>
+                                        <form method="post" action="{{ route('artist.concert.delete',$concert->id) }}">
+                                            @csrf
+                                        <button class="btn buy-tickets px-4" type="submit">Reject</button>
+                                        </form>
                                     </div>
+                                        @endif
                                 </div>
                             </div>
                         </div>

@@ -58,6 +58,32 @@
                                         <span>Number of Songs</span>
                                     </label>
                                 </div>
+                                    <div class="row mb-3">
+                                    <label>
+                                        <input type="number" required="required" name="price"/>
+                                        <span>Ticket Price(General)</span>
+                                    </label>
+                                </div>
+                                    <div class="row mb-3">
+                                        <label>
+                                            <select class="form-select form-select-lg mb-3" name="date">
+                                                <option selected>Available Dates</option>
+                                               @foreach($artist->date as $dt)
+                                                <option value="{{ $dt->date }}">{{ $dt->date }}</option>
+                                                @endforeach
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label>
+                                            <select class="form-select form-select-lg mb-3" name="venue">
+                                                <option selected>Available Venues</option>
+                                               @foreach($venue as $vn)
+                                                <option value="{{ $vn->id }}">{{ $vn->name  }}</option>
+                                                @endforeach
+                                            </select>
+                                        </label>
+                                    </div>
 
 
 
@@ -67,7 +93,7 @@
 
                                 <div class="row">
                                         <div class="col-sm-12" align="center">
-                                        <input type="submit" class="btn buy-tickets px-4" value="Save Changes">
+                                        <input type="submit" class="btn buy-tickets px-4" value="Send Request">
                                     </div>
                                 </div>
                                 </div>
