@@ -9,19 +9,32 @@
                     <h2>Edit Profile</h2>
 
                 </div>
-
+                <form method="post" action="{{ route('artist.profile.update') }}" enctype="multipart/form-data">
+                    @csrf
                 <div class="row">
 
 
 
                     <div class="col-md-4">
-                        <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
+                        @if($artist->image!=NULL)
+                            <img src="{{ asset('img/artist/'.$artist->image) }}" class="img-fluid" style="width: 640px; height: 480px;">
+                        @else
+                            <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
+                        @endif
+                            <div class="row m-3">
+
+                                <div class="col-md-12">
+                                    <input type="file" name="image" class="form-control">
+                                </div>
+
+
+
+                            </div>
                     </div>
 
 
                     <div class="col-md-8">
-                        <form method="post" action="{{ route('artist.profile.update') }}">
-                            @csrf
+
                         <div class="card">
                             <div class="card-header">
                                 <h1 class="mt-3">Edit Your Profile</h1>
@@ -72,19 +85,19 @@
                                     <div class="row mb-3">
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[0]->date }}" />
+                                                <input type="text" class="dateselect" name="date[]"  />
                                                 <span>Date</span>
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[1]->date }}"/>
+                                                <input type="text" class="dateselect" name="date[]" />
                                                 <span>Date</span>
                                             </label>
                                         </div>
                                         <div class="col-md-3">
                                             <label>
-                                                <input type="text" class="dateselect" name="date[]" value="{{ $date[2]->date }}"/>
+                                                <input type="text" class="dateselect" name="date[]" />
                                                 <span>Date</span>
                                             </label>
                                         </div>
@@ -126,7 +139,7 @@
                                 </div>
                                 </div>
                             </div>
-                        </form>
+
 
                         </div>
 
@@ -134,6 +147,7 @@
 
 
                 </div>
+                </form>
                 </div>
 
 

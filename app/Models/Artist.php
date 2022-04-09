@@ -60,5 +60,12 @@ class Artist extends Authenticatable
     {
         return $this->hasMany('App\Models\Date');
     }
+
+    public function delete()
+    {
+        $this->concert()->delete();
+        $this->date()->delete();
+        return parent::delete();
+    }
 }
 

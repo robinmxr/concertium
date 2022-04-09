@@ -77,6 +77,7 @@
 <script src="{{ asset('js/datepicker.js') }}"></script>
 <script>
     $(function()
+
     {
         $('.dateselect').datepicker({
             format: 'yyyy/mm/dd',

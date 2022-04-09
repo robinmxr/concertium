@@ -12,7 +12,7 @@ class Venue extends Model
     protected $fillable = [
         'name',
         'capacity',
-        'description',
+        'location',
         'cost',
     ];
     public function concert()
@@ -22,5 +22,11 @@ class Venue extends Model
     public function admin()
     {
         return $this->belongsTo('App\Models\Admin','admin_id');
+    }
+
+    public function delete()
+    {
+        $this->concert()->delete();
+        return parent::delete();
     }
 }

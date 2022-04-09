@@ -26,7 +26,11 @@ class OrganizerController extends Controller
     }
     public function updateprofile(Request $request)
     {
-        $organizer = new Organizer;
+
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $id =  Auth::guard('organizer')->user()->id;
         $organizer = Organizer::find($id);
 
@@ -34,7 +38,10 @@ class OrganizerController extends Controller
 
         $organizer->phone = $request->phone;
 
+        $imageName = time().'.'.$request->image->extension();
 
+        $request->image->move(public_path('img/organizer'), $imageName);
+        $organizer->image = $imageName;
         $organizer->save();
 
         return back()->with('success','Profile Updated!');

@@ -12,8 +12,12 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
-                    </div>
+                        @if($admin->image!=NULL)
+                            <img src="{{ asset('img/admin/'.$admin->image) }}" class="img-fluid" style="width: 640px; height: 480px;">
+                        @else
+                            <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
+                        @endif
+                   </div>
 
 
                     <div class="col-md-8">

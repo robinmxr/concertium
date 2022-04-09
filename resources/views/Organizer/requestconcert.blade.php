@@ -17,7 +17,7 @@
 
 
 
-                    <div class="col-md-12">
+                    <div class="col-md-8 mx-auto my-auto">
                         <form method="post" action="{{ route('organizer.concert.makerequest',$artist->id) }}">
                             @csrf
                         <div class="card">
@@ -69,7 +69,7 @@
                                             <select class="form-select form-select-lg mb-3" name="date">
                                                 <option selected>Available Dates</option>
                                                @foreach($artist->date as $dt)
-                                                <option value="{{ $dt->date }}">{{ $dt->date }}</option>
+                                                <option value="{{ $dt->id }}">{{ $dt->date }}</option>
                                                 @endforeach
                                             </select>
                                         </label>

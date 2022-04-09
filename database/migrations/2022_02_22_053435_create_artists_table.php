@@ -18,8 +18,8 @@ class CreateArtistsTable extends Migration
             $table->string('name');
             $table->string('bandname')->default('not set');
             $table->string('genre')->default('not set');
-            $table->decimal('cost',8,2)->default('10000.00');
-            $table->decimal('balance',8,2)->default('100000.00');
+            $table->decimal('cost',8,2)->default('1000.00');
+            $table->decimal('balance',8,2)->default('10000.00');
             $table->string('phone')->default('not set');
             $table->string('email')->unique();
             $table->string('image')->nullable();

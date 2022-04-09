@@ -23,14 +23,14 @@
                                 <th scope="row">{{ $ven->id }}</th>
                                 <td>{{ $ven->name }}</td>
                                 <td>{{ $ven->capacity }}</td>
-                                <td><a class="buy-tickets">Details</a></td>
+                                <td><a class="buy-tickets" href="{{ route('admin.venue.view',$ven->id) }}">Details</a></td>
                             </tr>
 
                             @endforeach
                         </table>
                 <div class="row">
                     <div class="col-sm-12" align="center">
-                        <a class="btn buy-tickets px-4 mb-3" href="{{ route('admin.venue.create') }}">Add New Venue</a>
+                        <a class="btn buy-tickets px-4 mb-3" href="{{ route('admin.venue.create') }}"><span class="bi bi-plus-circle"></span>   Add New Venue</a>
                     </div>
                 </div>
                     </div>

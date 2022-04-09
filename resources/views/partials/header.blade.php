@@ -13,7 +13,7 @@
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
@@ -55,15 +55,27 @@
 
         @if(Auth::guard('admin')->check())
                     <li><a class="nav-link scrollto " href="{{ route('home') }}">Home</a></li>
+                    <li class="dropdown"><a href="#"><span>Members</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{{ route('admin.user.show') }}">User</a></li>
+                            <li><a href="{{ route('admin.artist.show') }}">Artist</a></li>
+                            <li><a href="{{ route('admin.organizer.show') }}">Organizer</a></li>
+
+                        </ul>
+                    </li>
+
                     <li><a class="nav-link scrollto" href="{{ route('admin.venue.show') }}">Venue</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('admin.concert.show') }}">Concert</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('admin.ticket.show') }}">Ticket</a></li>
 
                     <li><a class="nav-link scrollto" href="{{ route('admin.profile.view') }}">My Profile</a></li>
 
 
-                    <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
+
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('admin')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
+                    <li> <a class="dropdown-item" href="{{ route('admin.wallet.show') }}">Balance : {{ Auth::guard('admin')->user()->balance }} TK</a></li>
 
                     <li> <a class="dropdown-item" href="{{ route('admin.logout') }}"
                             onclick="event.preventDefault();
@@ -87,15 +99,17 @@
         </nav>
             @elseif(Auth::guard('user')->check())
             <li><a class="nav-link scrollto " href="{{ route('home') }}">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-
+            <li><a class="nav-link scrollto" href="{{ route('user.ticket.booked') }}">My Tickets</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('user.venue.show') }}">Venue</a></li>
             <li><a class="nav-link scrollto" href="{{ route('user.profile.view') }}">My Profile</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('user.concert.list') }}">Concerts</a></li>
 
 
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('user')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
+                    <li> <a class="dropdown-item" href="{{ route('user.wallet.show') }}"> Balance : {{ Auth::guard('user')->user()->balance }} TK</a></li>
 
                     <li> <a class="dropdown-item" href="{{ route('user.logout') }}"
                             onclick="event.preventDefault();
@@ -128,6 +142,7 @@
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('artist')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
+                    <li> <a class="dropdown-item" href="{{ route('artist.wallet.show') }}"> Balance : {{ Auth::guard('artist')->user()->balance }} </a></li>
 
                     <li> <a class="dropdown-item" href="{{ route('artist.logout') }}"
                             onclick="event.preventDefault();
@@ -152,7 +167,7 @@
         @elseif(Auth::guard('organizer')->check())
             <li><a class="nav-link scrollto" href="{{ route('home') }}">Home</a></li>
             <li><a class="nav-link scrollto" href="{{ route('organizer.artist.show') }}">All Artists</a></li>
-            <li><a class="nav-link scrollto" href="#about">Venues</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('organizer.venue.show') }}">Venue</a></li>
 
             <li><a class="nav-link scrollto" href="{{ route('organizer.profile.view') }}">My Profile</a></li>
 
@@ -161,6 +176,7 @@
             <li class="dropdown" aria-labelledby="navbarDropdown"><a href="#">
                     <span> {{ Auth::guard('organizer')->user()->name }} </span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
+                    <li> <a class="dropdown-item" href="{{ route('organizer.wallet.show') }}"> Balance : {{ Auth::guard('organizer')->user()->balance }} TK </a></li>
 
                     <li> <a class="dropdown-item" href="{{ route('organizer.logout') }}"
                             onclick="event.preventDefault();
@@ -183,17 +199,17 @@
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         @else
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-
-            <li><a class="nav-link scrollto" href="#">Concerts</a></li>
+            <li><a class="nav-link scrollto active" href="{{ route('home') }}">Home</a></li>
 
 
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li><a class="nav-link scrollto" href="{{ route('user.concert.list') }}">Concerts</a></li>
+
+
+            <li><a class="nav-link scrollto" href="{{ route('contact') }}">Contact</a></li>
         </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-            <a class="buy-tickets scrollto" href="#login">Login</a>
+            <a class="buy-tickets scrollto" href="{{ route('loginpage') }}">Login</a>
 @endif
     </div>
 </header><!-- End Header -->

@@ -26,7 +26,10 @@ class AdminController extends Controller
     }
     public function updateprofile(Request $request)
     {
-        $admin = new admin;
+  $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $id =  Auth::guard('admin')->user()->id;
         $admin = Admin::find($id);
 
@@ -35,6 +38,10 @@ class AdminController extends Controller
         $admin->phone = $request->phone;
 
 
+
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('img/admin'), $imageName);
+        $admin->image = $imageName;
         $admin->save();
 
         return back()->with('success','Profile Updated!');

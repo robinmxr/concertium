@@ -35,4 +35,10 @@ class Concert extends Model
     {
         return $this->hasMany('App\Models\Ticket');
     }
+
+    public function delete()
+    {
+        $this->ticket()->delete();
+        return parent::delete();
+    }
 }

@@ -41,13 +41,9 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-3">
-                    @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-                </x-button>
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('artist.register') }}">
+                    {{ __('Not Registered yet?') }}
+                </a>
 
                 <x-button class="ml-3">
                     {{ __('Log in') }}

@@ -5,7 +5,7 @@
             <h1 class="mb-4 pb-0">Logged In <br><span>as</span> User</h1>
 
 
-            <a href="#about" class="about-btn scrollto">About Concertium</a>
+            <a href="{{ route('user.concert.list') }}" class="about-btn scrollto">Upcoming Concerts</a>
         </div>
     </section><!-- End Hero Section -->
 

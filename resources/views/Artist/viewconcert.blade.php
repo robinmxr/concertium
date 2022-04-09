@@ -12,13 +12,16 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="{{ asset('img/speakers/1.jpg') }}" alt="Speaker 1" class="img-fluid">
+                      <img src="{{ asset('img/venue/'.$concert->venue->image) }}"  class="img-fluid" style="height: 480px; width: 640px;">
                         <div class="card-header"><h3 class="mt-3" >Venue   : {{ $concert->venue->name }}</h3></div>
                     </div>
 
 
                     <div class="col-md-8">
                         <div class="card mb-3">
+                            <div class="card-header">
+                                <h3 class="m-3"> Concert Information </h3>
+                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-3">
@@ -67,10 +70,25 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Ticket Price</h6>
+                                        <h6 class="mb-0">Total Tickets</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        {{ $concert->baseprice }}
+                                        {{ $concert->tickets }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Ticket Price</h6>
+                                    </div>
+                                    <div class="col-sm-3 text-secondary">
+                                        General : {{ $concert->baseprice }}
+                                    </div>
+                                    <div class="col-sm-3 text-secondary">
+                                        Standard : {{ $concert->baseprice*1.2 }}
+                                    </div>
+                                    <div class="col-sm-3 text-secondary">
+                                        Premium : {{ $concert->baseprice*1.5 }}
                                     </div>
                                 </div>
                                 <hr>
@@ -97,7 +115,7 @@
                                     <div class="col-sm-6" align="center">
                                         <form method="post" action="{{ route('artist.concert.delete',$concert->id) }}">
                                             @csrf
-                                        <button class="btn buy-tickets px-4" type="submit">Reject</button>
+                                        <button class="btn buy-tickets-2 px-4" type="submit">Reject</button>
                                         </form>
                                     </div>
                                         @endif

@@ -22,6 +22,6 @@ class User
             return $next($request);
           }
 
-    return redirect('/user/login')->with('error',"You must login to access User Panel");
+    return redirect('/login')->with('error',"You must login to access User Panel");
     }
 }

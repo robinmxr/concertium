@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Ticket');
     }
+
+    public function delete()
+    {
+        $this->ticket()->delete();
+        return parent::delete();
+    }
 }

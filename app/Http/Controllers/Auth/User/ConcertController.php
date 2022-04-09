@@ -14,5 +14,11 @@ class ConcertController extends Controller
         $concert = Concert::all();
         return view('user.concertlist',compact('concert'));
     }
+    public function viewConcert($id)
+    {
+        $concert = Concert::find($id);
+        return view('user.viewconcert',compact('concert'));
+    }
+
 
 }

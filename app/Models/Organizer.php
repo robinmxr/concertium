@@ -53,5 +53,11 @@ class Organizer extends Authenticatable
     {
         return $this->hasMany('App\Models\Concert');
     }
+
+    public function delete()
+    {
+        $this->concert()->delete();
+        return parent::delete();
+    }
 }
 

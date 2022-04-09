@@ -17,14 +17,19 @@
 <th scope="col">Concert Name</th>
 <th scope="col">Artist</th>
 <th scope="col">Venue</th>
-<th scope="col">Details</th>
+<th scope="col">Date</th>
+<th scope="col">Available Tickets</th>
+<th scope="col">Action</th>
 </thead>
 @foreach($concert as $con)
                             <tr class="mt-3 mb-3">
                                 <th scope="row">1</th>
                                 <td>{{ $con->name }}</td>
                                 <td>{{ $con->artist->name }}</td>
-                                <td><a class="buy-tickets">Details</a></td>
+                                <td>{{ $con->venue->name }}</td>
+                                <td>{{ $con->date }}</td>
+                                <td>{{ $con->tickets }}</td>
+                                <td><a class="buy-tickets-2" href="{{ route('user.concert.view',$con->id) }}">Details</a></td>
                             </tr>
 
                             @endforeach

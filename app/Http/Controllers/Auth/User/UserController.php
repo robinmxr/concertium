@@ -12,21 +12,24 @@ class UserController extends Controller
     //
     public function profile()
     {
-        $user = new User;
+
         $id =  Auth::guard('user')->user()->id;
         $user = User::find($id);
         return view('user.profile',compact('user'));
     }
     public function editprofile()
     {
-        $user = new User;
+
         $id =  Auth::guard('user')->user()->id;
         $user = User::find($id);
         return view('user.editprofile',compact('user'));
     }
     public function updateprofile(Request $request)
     {
-        $user = new User;
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $id =  Auth::guard('user')->user()->id;
         $user = User::find($id);
 
@@ -34,7 +37,10 @@ class UserController extends Controller
 
         $user->phone = $request->phone;
 
+        $imageName = time().'.'.$request->image->extension();
 
+        $request->image->move(public_path('img/user'), $imageName);
+        $user->image = $imageName;
         $user->save();
 
         return back()->with('success','Profile Updated!');

@@ -51,4 +51,10 @@ class Admin extends Authenticatable
     {
         return $this->hasMany('App\Models\Venue');
     }
+
+    public function delete()
+    {
+        $this->venue()->delete();
+        return parent::delete();
+    }
 }

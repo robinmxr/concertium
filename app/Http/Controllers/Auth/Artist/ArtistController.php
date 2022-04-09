@@ -30,6 +30,7 @@ class ArtistController extends Controller
     public function updateprofile(Request $request)
     {
 
+
         $id =  Auth::guard('artist')->user()->id;
         $artist = Artist::find($id);
 
@@ -53,7 +54,16 @@ class ArtistController extends Controller
                 }
             }
         }
+        if($request->image!=NULL) {
 
+            $request->validate([
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+            $imageName = time() . '.' . $request->image->extension();
+
+            $request->image->move(public_path('img/artist'), $imageName);
+            $artist->image = $imageName;
+        }
         $artist->save();
 
 

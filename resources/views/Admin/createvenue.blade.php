@@ -4,6 +4,8 @@
 
         <!-- ======= Speaker Details Sectionn ======= -->
         <section id="speakers-details">
+            <form action="{{ route('admin.venue.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
             <div class="container">
                 <div class="section-header">
                     <h2>Add a New Venue</h2>
@@ -17,9 +19,8 @@
 
 
 
-                    <div class="col-md-12">
-<form action="{{ route('admin.venue.store') }}" method="post">
-    @csrf
+                    <div class="col-md-8 mx-auto my-auto">
+
                         <div class="card">
                             <div class="card-body">
                                @include('partials.message')
@@ -46,18 +47,28 @@
                                         <span>Cost</span>
                                     </label>
                                 </div>
-
-
-
-                                <div class="row">
-                                        <div class="col-sm-12" align="center">
-                                        <input type="submit" class="btn buy-tickets px-4" value="Save Changes">
-                                    </div>
+                                    <div class="row mb-3">
+                                    <label>
+                                        <input type="text" required="required" name="location"/>
+                                        <span>Location</span>
+                                    </label>
                                 </div>
+
+                                    <div class="row mb-3">
+
+                                        <div class="col-md-12">
+                                            <input type="file" name="image" class="form-control">
+                                        </div>
+
+
+
+                                    </div>
+
+
                                 </div>
                                 </div>
                             </div>
-</form>
+
 
 
                         </div>
@@ -66,7 +77,17 @@
 
 
                 </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12" align="center">
+                        <input type="submit" class="btn buy-tickets px-4" value="Create Venue">
+                    </div>
                 </div>
+
+                </div>
+            </form>
+
+
+
 
 
         </section>

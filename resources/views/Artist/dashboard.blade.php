@@ -5,7 +5,7 @@
             <h1 class="mb-4 pb-0">Logged In <br><span>as</span> Artist</h1>
 
 
-            <a href="#about" class="about-btn scrollto">About Concertium</a>
+            <a href="{{ route('artist.concert.list') }}" class="about-btn scrollto">All Concerts</a>
         </div>
     </section><!-- End Hero Section -->
 
@@ -16,7 +16,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>About The Event</h2>
+                        <h2>About Concertium</h2>
                         <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut
                             accusantium et. Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in
                             est ut optio sequi unde.</p>
